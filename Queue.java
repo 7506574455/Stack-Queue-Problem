@@ -2,8 +2,8 @@ package com.ds;
 
 public class Queue {
 
-	 
-		Node front;     //creating  of node
+	
+		Node front;     //creating head node 
 		Node rear;
 		
 
@@ -12,14 +12,15 @@ public class Queue {
 			int data;
 
 		
-			public Node(int data) {   //constructor
+			
+			public Node(int data) {     //constructor 
 				super();
 				this.next = next;
 				this.data = data;
 			}
 		}
 		
-		public Node enque(int data)      // insert element in the queue(Enque operation)
+		public Node enque(int data)     //insert element in the queue(Enque operation)
 		{	
 			 Node newNode = new Node(data);
 			 if (front == null && rear==null) 
@@ -37,14 +38,25 @@ public class Queue {
 			 }
 			 return newNode;
 		}
-	// method to display Queue
-		public void print() 
+		
+		public void  dequeue()     // delete the elements from Queue(Dequeue)
+		 { 
+			int popData = 0;
+			if (front == null && rear==null) {
+					System.out.println("Queue is empty");
+				}
+				 popData = front.data;
+				 front = front.next;	
+		 }
+
+		
+		
+		public void print()    // method to display Queue
 		 {			 
-			 Node temp = front;
-			 
+			 Node temp = front;	 
 			 if(temp==null)
 			 {
-				 System.out.println("queue is empty");
+				 System.out.println("Queue is empty");
 			 }
 			 while (temp != null)
 			 {
@@ -53,6 +65,5 @@ public class Queue {
 			 }
 			 System.out.println();
 		 }
-		
-        }
-
+			
+	}
